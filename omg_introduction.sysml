@@ -402,4 +402,113 @@ package 'OMG Introduction' {
             bind shoot.picture = picture;
         }
     }
+
+    package 'State Definitions Example' {
+        private import 'Vehicle Definition Example'::Vehicle;
+        part def VehicleController;
+        action def VehicleStartSignal;
+        action def VehicleOnSignal;
+        action def VehicleOffSignal;
+        package 'State Definitions 1' {
+            state def VehicleStates {
+                entry;
+                then off;
+                state off;
+                transition off_to_starting first off accept VehicleStartSignal then starting;
+                state starting;
+                transition starting_to_on first starting accept VehicleOnSignal then on;
+                state on;
+                transition on_to_off first on accept VehicleOffSignal then off;
+            }
+        }
+        package 'State Definitions 2' {
+            state def VehicleStates {
+                entry;
+                then off;
+                state off;
+                transition off accept VehicleStartSignal then starting;
+                state starting;
+                transition starting accept VehicleOnSignal then on;
+                state on;
+                transition on accept VehicleOffSignal then off;
+            }
+        }
+        package 'State Decomposition' {
+            state def VehicleStates;
+            state vehicleStates : VehicleStates {
+                entry;
+                then off;
+                state off;
+                transition off accept VehicleStartSignal then starting;
+                state starting;
+                transition starting accept VehicleOnSignal then on;
+                state on;
+                transition on accept VehicleOffSignal then off;
+            }
+        }
+        package 'Concurrent States' {
+            state def VehicleStates;
+            state vehicleStates : VehicleStates parallel {
+                state operationalStates {
+                    entry;
+                    then off;
+                    state off;
+                    transition off accept VehicleStartSignal then starting;
+                    state starting;
+                    transition starting accept VehicleOnSignal then on;
+                    state on;
+                    transition on accept VehicleOffSignal then off;
+                }
+                state healthStates;
+            }
+        }
+        package 'State Entry, Do and Exit Actions' {
+            action performSelfTest { in vehicle : Vehicle; }
+            state def VehicleStates { in operatingVehicle : Vehicle; }
+            state vehicleStates : VehicleStates {
+                in operatingVehicle : Vehicle;
+                entry;
+                then off;
+                state off;
+                transition off accept VehicleStartSignal then starting;
+                state starting;
+                transition starting accept VehicleOnSignal then on;
+                state on {
+                    entry performSelfTest { in vehicle = operatingVehicle; }
+                    do action providePower;
+                    exit action applyParkingBrake;
+                }
+                transition on accept VehicleOffSignal then off;
+            }
+        }
+        package 'Transition Guards and Effect Actions' {
+            action def ControllerStartSignal;
+            part operatingVehicle : Vehicle {
+                action brakePedalDepressed;
+            }
+            action performSelfTest { in vehicle : Vehicle; }
+            state def VehicleStates {
+                in operatingVehicle : Vehicle;
+                in controller : VehicleController;
+            }
+            state vehicleStates : VehicleStates {
+                in operatingVehicle : Vehicle;
+                in controller : VehicleController;
+                entry;
+                then off;
+                state off;
+
+                transition
+                    off
+                    accept VehicleStartSignal
+                    if operatingVehicle.brakePedalDepressed
+                        do send new ControllerStartSignal() to controller
+                    then starting;
+                state starting;
+                transition starting accept VehicleOnSignal then on;
+                state on;
+                transition on accept VehicleOffSignal then off;
+            }
+        }
+    }
 }
