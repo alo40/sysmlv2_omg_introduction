@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Knowledge Graph</title>
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #f8fafc; }
+    canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+  </style>
+</head>
+<body>
+  <canvas id="graph"></canvas>
+
+  <script>
+    const canvas = document.getElementById('graph');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Updated data from the attached JSON (simplified static mapping)
+    const nodes = [
+      { name: 'Namespace', x: 300, y: 80 },
+      { name: 'Package: Single Example 2025-11-03 trial 2', x: 300, y: 180 },
+      { name: 'PartDefinition: Vehicle', x: 180, y: 280 },
+      { name: 'PartDefinition: Engine', x: 420, y: 280 },
+      { name: 'PartUsage: vehicle', x: 420, y: 380 },
+      { name: 'PartUsage: engine', x: 260, y: 380 },
+      { name: 'AttributeUsage: weight', x: 180, y: 380 },
+      { name: 'ActionUsage: startEngine', x: 420, y: 480 }
+    ];
+
+    const edges = [
+      { a: 0, b: 1, label: 'owns' },
+      { a: 1, b: 2, label: 'owns' },
+      { a: 1, b: 3, label: 'owns' },
+      { a: 1, b: 4, label: 'owns' },
+      { a: 1, b: 7, label: 'owns' },
+      { a: 2, b: 6, label: 'hasFeature' },
+      { a: 3, b: 7, label: 'hasFeature' },
+      { a: 4, b: 2, label: 'typedBy' },
+      { a: 5, b: 3, label: 'typedBy' },
+      { a: 4, b: 5, label: 'hasPart (engine)' }
+    ];
+
+    let draggingNode = null;
+    let offsetX = 0, offsetY = 0;
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw edges
+      ctx.strokeStyle = '#999';
+      ctx.lineWidth = 2;
+      edges.forEach(e => {
+        const n1 = nodes[e.a];
+        const n2 = nodes[e.b];
+        ctx.beginPath();
+        ctx.moveTo(n1.x, n1.y);
+        ctx.lineTo(n2.x, n2.y);
+        ctx.stroke();
+
+        // Draw relationship label at midpoint
+        const midX = (n1.x + n2.x) / 2;
+        const midY = (n1.y + n2.y) / 2;
+        ctx.fillStyle = '#333';
+        ctx.font = '13px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(e.label, midX, midY - 5);
+      });
+
+      // Draw nodes
+      nodes.forEach(n => {
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, 20, 0, Math.PI * 2);
+        ctx.fillStyle = '#38bdf8';
+        ctx.fill();
+        ctx.strokeStyle = '#000';
+        ctx.stroke();
+        ctx.fillStyle = '#000';
+        ctx.font = '12px sans-serif';
+        ctx.textAlign = 'center';
+        wrapText(ctx, n.name, n.x, n.y + 35, 150, 14);
+      });
+    }
+
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+      const words = text.split(' ');
+      let line = '';
+      let currentY = y;
+      for (let n = 0; n < words.length; n++) {
+        const testLine = line + words[n] + ' ';
+        const metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && n > 0) {
+          ctx.fillText(line, x, currentY);
+          line = words[n] + ' ';
+          currentY += lineHeight;
+        } else {
+          line = testLine;
+        }
+      }
+      ctx.fillText(line, x, currentY);
+    }
+
+    function getNodeAt(x, y) {
+      return nodes.find(n => Math.hypot(n.x - x, n.y - y) < 20);
+    }
+
+    canvas.addEventListener('mousedown', e => {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const node = getNodeAt(x, y);
+      if (node) {
+        draggingNode = node;
+        offsetX = x - node.x;
+        offsetY = y - node.y;
+        canvas.style.cursor = 'grabbing';
+      }
+    });
+
+    canvas.addEventListener('mousemove', e => {
+      if (!draggingNode) return;
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      draggingNode.x = x - offsetX;
+      draggingNode.y = y - offsetY;
+      draw();
+    });
+
+    canvas.addEventListener('mouseup', () => {
+      draggingNode = null;
+      canvas.style.cursor = 'grab';
+    });
+
+    canvas.addEventListener('mouseleave', () => {
+      draggingNode = null;
+      canvas.style.cursor = 'grab';
+    });
+
+    draw();
+  </script>
+</body>
+</html>

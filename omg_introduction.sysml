@@ -1,6 +1,7 @@
-package 'OMG Introduction' {
+package 'OMG Introduction Examples' {
     private import ScalarValues::*;
-    public import ISQ::TorqueValue;
+    public import ISQ::*;
+    public import SI::*;
 
     package 'Package Example' {
         part def Automobile;
@@ -42,6 +43,10 @@ package 'OMG Introduction' {
             attribute mass : ScalarValues::Real;
             // part eng : Engine;
             ref part driver : Person;
+            action brakePedalDepressed : Boolean;
+            attribute maintenanceTime : Time::TimeInstantValue;
+            attribute maintenanceInterval : Time::TimeInstantValue;
+            attribute maxTemperature;
         }
         attribute def VehicleStatus {
             private import ScalarValues::*;
@@ -406,6 +411,7 @@ package 'OMG Introduction' {
     package 'State Definitions Example' {
         private import 'Vehicle Definition Example'::Vehicle;
         part def VehicleController;
+        action def ControllerStartSignal;
         action def VehicleStartSignal;
         action def VehicleOnSignal;
         action def VehicleOffSignal;
@@ -418,6 +424,7 @@ package 'OMG Introduction' {
                 state starting;
                 transition starting_to_on first starting accept VehicleOnSignal then on;
                 state on;
+                transition on then done;
                 transition on_to_off first on accept VehicleOffSignal then off;
             }
         }
@@ -430,6 +437,7 @@ package 'OMG Introduction' {
                 state starting;
                 transition starting accept VehicleOnSignal then on;
                 state on;
+                transition on then done;
                 transition on accept VehicleOffSignal then off;
             }
         }
@@ -443,6 +451,7 @@ package 'OMG Introduction' {
                 state starting;
                 transition starting accept VehicleOnSignal then on;
                 state on;
+                transition on then done;
                 transition on accept VehicleOffSignal then off;
             }
         }
@@ -457,9 +466,15 @@ package 'OMG Introduction' {
                     state starting;
                     transition starting accept VehicleOnSignal then on;
                     state on;
+                    transition on then done;
                     transition on accept VehicleOffSignal then off;
                 }
-                state healthStates;
+                state healthStates {
+                    entry;
+                    then off;
+                    state off;
+                    transition off then done;
+                }
             }
         }
         package 'State Entry, Do and Exit Actions' {
@@ -482,10 +497,6 @@ package 'OMG Introduction' {
             }
         }
         package 'Transition Guards and Effect Actions' {
-            action def ControllerStartSignal;
-            part operatingVehicle : Vehicle {
-                action brakePedalDepressed;
-            }
             action performSelfTest { in vehicle : Vehicle; }
             state def VehicleStates {
                 in operatingVehicle : Vehicle;
@@ -508,6 +519,35 @@ package 'OMG Introduction' {
                 transition starting accept VehicleOnSignal then on;
                 state on;
                 transition on accept VehicleOffSignal then off;
+            }
+        }
+        package 'Change and Time Triggers' {
+            action def OverTemp;
+            attribute def TemperatureValue;
+            action senseTemperature { out temp : TemperatureValue; }
+            state healthStates {
+                in vehicle : Vehicle;
+                in controller : VehicleController;
+                entry;
+                then normal;
+                do senseTemperature;
+                state normal;
+                transition normal accept at vehicle.maintenanceTime then maintenance;
+                transition
+                    normal
+                    accept when senseTemperature.temp > vehicle.maxTemperature
+                    do send new OverTemp() to controller
+                    then degraded;
+                state maintenance {
+                    entry assign vehicle
+                        .maintenanceTime := vehicle.maintenanceTime + vehicle.maintenanceInterval;
+                }
+                transition maintenance accept after 48 [h] then normal;
+                state degraded;
+                transition
+                    degraded
+                    accept when senseTemperature.temp <= vehicle.maxTemperature
+                    then normal;
             }
         }
     }
