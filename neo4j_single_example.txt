@@ -1,0 +1,189 @@
+// --- Schema constraint ---
+CREATE CONSTRAINT element_id_unique IF NOT EXISTS
+FOR (e:Element)
+REQUIRE e.elementId IS UNIQUE;
+
+// --- Nodes ---
+CREATE
+// Namespaces
+(n1:Element:Namespace {
+    elementId: 'a24651b5-d4ca-47ad-a808-daf43f313669'
+}),
+
+// Packages
+(n2:Element:Package {
+    elementId: 'a5551616-357d-516f-8faa-ed5c0c9e6e47',
+    declaredName: 'Single Example'
+}),
+
+// PartDefinitions
+(n3:Element:PartDefinition {
+    elementId: '1d56ea79-24df-535a-9e0b-197621415a95',
+    declaredName: 'Vehicle',
+    isVariation: false
+}),
+(n4:Element:PartDefinition {
+    elementId: '716e1b47-988f-586f-b3a3-84a659df74f5',
+    declaredName: 'Engine',
+    isVariation: false
+}),
+
+// AttributeUsages
+(n5:Element:AttributeUsage {
+    elementId: 'bd004282-a674-5dd4-b1b4-242d95e0e8cd',
+    declaredName: 'weight',
+    isVariable: true,
+    isVariation: false
+}),
+
+// PerformActionUsage
+(n6:Element:PerformActionUsage {
+    elementId: '41306389-19d3-5b39-80fa-481754001ae2',
+    declaredName: 'startEngine',
+    isVariable: true,
+    isVariation: false
+}),
+
+// ActionUsage
+(n7:Element:ActionUsage {
+    elementId: '85e4adf5-ed9e-5b50-86f3-29fccf6eae42',
+    declaredName: 'startEngine',
+    isVariation: false
+}),
+
+// RequirementUsage
+(n8:Element:RequirementUsage {
+    elementId: '4b2df9a8-b9ae-5d00-a3f3-afbf1c38db7f',
+    declaredName: 'maxVehicleWeight',
+    declaredShortName: '1',
+    isVariation: false,
+    reqId: '1'
+}),
+
+// AttributeUsage for maxWeight
+(n9:Element:AttributeUsage {
+    elementId: 'c3717dfa-a664-5826-b01b-6be8d707b953',
+    declaredName: 'maxWeight',
+    isVariable: true,
+    isVariation: false
+}),
+
+// ConstraintUsage
+(n10:Element:ConstraintUsage {
+    elementId: '5c7515a3-36fc-4cd0-9776-2feef9ad69ef',
+    isComposite: true,
+    isVariable: true,
+    isVariation: false
+}),
+
+// OperatorExpression
+(n11:Element:OperatorExpression {
+    elementId: 'c6e7c07f-66fe-4842-8768-82a63d933a47',
+    operator: '<'
+}),
+
+// Features
+(n12:Element:Feature {
+    elementId: 'a6c8aeeb-d5f7-4f2f-a60f-3257965a5f2c',
+    direction: 'in'
+}),
+(n13:Element:Feature {
+    elementId: 'abb0050e-addf-436a-a8db-237eea098876',
+    direction: 'in'
+}),
+(n14:Element:Feature {
+    elementId: '37f8c131-24f7-4a4e-97c5-20ca589dda4a',
+    direction: 'in'
+}),
+
+// FeatureValues
+(n15:Element:FeatureValue {
+    elementId: '1b06a89c-d969-44a2-bb2a-8753743d19b4'
+}),
+(n16:Element:FeatureValue {
+    elementId: 'badb6127-ca3a-4b49-8d31-be2994bb5caf'
+}),
+(n17:Element:FeatureValue {
+    elementId: 'e5885a34-c8a3-45b0-9628-6dea38f1577d'
+}),
+
+// FeatureReferenceExpressions
+(n18:Element:FeatureReferenceExpression {
+    elementId: 'ee917029-4b84-45f1-bce1-1b3a7e09b545'
+}),
+(n19:Element:FeatureReferenceExpression {
+    elementId: '3ac6406f-4a4b-4833-a1b9-99b109fe3b18'
+}),
+
+// Memberships
+(n20:Element:Membership {
+    elementId: '34cc52e6-65d5-4eab-946f-ce4c3a5ba367'
+}),
+(n21:Element:Membership {
+    elementId: '8a5f2f7f-a23b-4a9f-9f1d-d9ef9cbe4bb9'
+});
+
+// --- OwningMembership relationships (OWNS) ---
+MATCH 
+(nNamespace:Namespace {elementId: 'a24651b5-d4ca-47ad-a808-daf43f313669'}),
+(pPackage:Package {elementId: 'a5551616-357d-516f-8faa-ed5c0c9e6e47'})
+CREATE (nNamespace)-[:OWNS]->(pPackage);
+
+MATCH 
+(pPackage:Package {elementId: 'a5551616-357d-516f-8faa-ed5c0c9e6e47'}),
+(vVehicle:PartDefinition {elementId: '1d56ea79-24df-535a-9e0b-197621415a95'}),
+(eEngine:PartDefinition {elementId: '716e1b47-988f-586f-b3a3-84a659df74f5'}),
+(aStartEngine:ActionUsage {elementId: '85e4adf5-ed9e-5b50-86f3-29fccf6eae42'}),
+(rRequirement:RequirementUsage {elementId: '4b2df9a8-b9ae-5d00-a3f3-afbf1c38db7f'})
+CREATE (pPackage)-[:OWNS]->(vVehicle),
+       (pPackage)-[:OWNS]->(eEngine),
+       (pPackage)-[:OWNS]->(aStartEngine),
+       (pPackage)-[:OWNS]->(rRequirement);
+
+// --- FeatureMembership relationships (FEATURES) ---
+MATCH 
+(vVehicle:PartDefinition {elementId: '1d56ea79-24df-535a-9e0b-197621415a95'}),
+(fWeight:AttributeUsage {elementId: 'bd004282-a674-5dd4-b1b4-242d95e0e8cd'})
+CREATE (vVehicle)-[:FEATURES]->(fWeight);
+
+MATCH 
+(eEngine:PartDefinition {elementId: '716e1b47-988f-586f-b3a3-84a659df74f5'}),
+(fStartEngine:PerformActionUsage {elementId: '41306389-19d3-5b39-80fa-481754001ae2'})
+CREATE (eEngine)-[:FEATURES]->(fStartEngine);
+
+// --- PartUsage relationships (CONTAINS) ---
+MATCH 
+(pVehicleUsage:PartUsage {elementId: '72a3ab66-aa9d-5016-886a-698ee6556f6e'}),
+(vVehicle:PartDefinition {elementId: '1d56ea79-24df-535a-9e0b-197621415a95'}),
+(eEngine:PartDefinition {elementId: '716e1b47-988f-586f-b3a3-84a659df74f5'})
+CREATE (pVehicleUsage)-[:CONTAINS]->(vVehicle),
+       (pVehicleUsage)-[:CONTAINS]->(eEngine);
+
+// --- FeatureTyping relationships (TYPED_BY) ---
+MATCH 
+(pVehicleUsage:PartUsage {elementId: '72a3ab66-aa9d-5016-886a-698ee6556f6e'}),
+(vVehicle:PartDefinition {elementId: '1d56ea79-24df-535a-9e0b-197621415a95'}),
+(pEngineUsage:PartUsage {elementId: '1353cbc9-d4c7-5b48-9391-c5dbe606e617'}),
+(eEngine:PartDefinition {elementId: '716e1b47-988f-586f-b3a3-84a659df74f5'})
+CREATE (pVehicleUsage)-[:TYPED_BY]->(vVehicle),
+       (pEngineUsage)-[:TYPED_BY]->(eEngine);
+
+// --- RequirementUsage relationships (SATISFIES) ---
+MATCH 
+(rRequirement:RequirementUsage {elementId: '4b2df9a8-b9ae-5d00-a3f3-afbf1c38db7f'}),
+(aMaxWeight:AttributeUsage {elementId: 'c3717dfa-a664-5826-b01b-6be8d707b953'})
+CREATE (aMaxWeight)-[:SATISFIES]->(rRequirement);
+
+// --- ConstraintUsage relationships (CONSTRAINS) ---
+MATCH 
+(cConstraint:ConstraintUsage {elementId: '5c7515a3-36fc-4cd0-9776-2feef9ad69ef'}),
+(oOperator:OperatorExpression {elementId: 'c6e7c07f-66fe-4842-8768-82a63d933a47'})
+CREATE (cConstraint)-[:CONSTRAINS]->(oOperator);
+
+// --- OperatorExpression parameter memberships ---
+MATCH 
+(oOperator:OperatorExpression {elementId: 'c6e7c07f-66fe-4842-8768-82a63d933a47'}),
+(fVehicle:Feature {elementId: '37f8c131-24f7-4a4e-97c5-20ca589dda4a'}),
+(fMaxWeight:Feature {elementId: 'a6c8aeeb-d5f7-4f2f-a60f-3257965a5f2c'})
+CREATE (oOperator)-[:OPERATES_ON]->(fVehicle),
+       (oOperator)-[:OPERATES_ON]->(fMaxWeight);
