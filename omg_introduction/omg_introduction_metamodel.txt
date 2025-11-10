@@ -1,0 +1,3441 @@
+<syside.core.SharedMutex object at 0x103f88dc0>
+Model sexp:
+ (Namespace
+  (OwningMembership
+    (Package OMG Introduction Examples
+      (NamespaceImport)
+      (NamespaceImport)
+      (NamespaceImport)
+      (OwningMembership
+        (Package Package Example
+          (OwningMembership
+            (PartDefinition Automobile
+              (Subclassification)))
+          (Membership Car)
+          (Membership Torque)))
+      (OwningMembership
+        (Package Comment Example
+          (OwningMembership
+            (Comment))
+          (OwningMembership
+            (Comment Comment1))
+          (OwningMembership
+            (Comment
+              (Annotation)))
+          (OwningMembership
+            (PartDefinition Automobile
+              (Subclassification)))
+          (Membership Car
+            (Annotation
+              (Comment)))
+          (Membership Torque)))
+      (OwningMembership
+        (Package Documentation Example
+          (OwningMembership
+            (Documentation))
+          (OwningMembership
+            (PartDefinition Automobile
+              (Subclassification)
+              (OwningMembership
+                (Documentation Document1))))
+          (Membership Car
+            (Annotation
+              (Documentation)))
+          (Membership Torque)))
+      (OwningMembership
+        (Package Vehicle Definition Example
+          (OwningMembership
+            (PartDefinition Vehicle
+              (Subclassification)
+              (FeatureMembership
+                (AttributeUsage mass
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (PartUsage driver
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ActionUsage brakePedalDepressed
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (AttributeUsage maintenanceTime
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (AttributeUsage maintenanceInterval
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (AttributeUsage maxTemperature
+                  (Subsetting)))))
+          (OwningMembership
+            (AttributeDefinition VehicleStatus
+              (Subclassification)
+              (NamespaceImport)
+              (FeatureMembership
+                (AttributeUsage gearSetting
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (AttributeUsage acceleratorPosition
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (PartDefinition Engine
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition Person
+              (Subclassification)))))
+      (OwningMembership
+        (Package Vehicle Abstract Definition Example
+          (OwningMembership
+            (PartDefinition Vehicle
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition HumanDrivenVehicle
+              (Subclassification)
+              (FeatureMembership
+                (PartUsage driver
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (PartDefinition PoweredVehicle
+              (Subclassification)
+              (FeatureMembership
+                (PartUsage eng
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (PartDefinition HumanDrivenPoweredVehicle
+              (Subclassification)
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition Engine
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition Person
+              (Subclassification)))))
+      (OwningMembership
+        (Package Subsetting Example
+          (OwningMembership
+            (PartDefinition Vehicle
+              (Subclassification)
+              (FeatureMembership
+                (PartUsage parts
+                  (OwningMembership
+                    (MultiplicityRange
+                      (Subsetting)
+                      (TypeFeaturing)
+                      (OwningMembership
+                        (LiteralInfinity
+                          (Subsetting)
+                          (TypeFeaturing)))))
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (PartUsage eng
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (PartUsage trans
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (PartUsage wheels
+                  (OwningMembership
+                    (MultiplicityRange
+                      (Subsetting)
+                      (TypeFeaturing)
+                      (OwningMembership
+                        (LiteralInteger
+                          (Subsetting)
+                          (TypeFeaturing)))))
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (PartDefinition VehiclePart
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition Engine
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition Transmission
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition Wheel
+              (Subclassification)))))
+      (OwningMembership
+        (Package Redefinition Example
+          (OwningMembership
+            (PartDefinition Vehicle
+              (Subclassification)
+              (FeatureMembership
+                (PartUsage eng
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (PartDefinition SmallVehicle
+              (Subclassification)
+              (FeatureMembership
+                (PartUsage smallEng
+                  (FeatureTyping)
+                  (Redefinition)))))
+          (OwningMembership
+            (PartDefinition BigVehicle
+              (Subclassification)
+              (FeatureMembership
+                (PartUsage bigEng
+                  (FeatureTyping)
+                  (Redefinition)))))
+          (OwningMembership
+            (PartDefinition Engine
+              (Subclassification)
+              (FeatureMembership
+                (PartUsage cyl
+                  (OwningMembership
+                    (MultiplicityRange
+                      (Subsetting)
+                      (TypeFeaturing)
+                      (OwningMembership
+                        (OperatorExpression
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (ParameterMembership
+                            (Feature
+                              (FeatureTyping)
+                              (Subsetting)
+                              (FeatureValue
+                                (LiteralInteger
+                                  (Subsetting)
+                                  (TypeFeaturing)))))
+                          (ParameterMembership
+                            (Feature
+                              (FeatureTyping)
+                              (Subsetting)
+                              (FeatureValue
+                                (LiteralInteger
+                                  (Subsetting)
+                                  (TypeFeaturing)))))))))
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (PartDefinition SmallEngine
+              (Subclassification)
+              (FeatureMembership
+                (PartUsage cyl
+                  (OwningMembership
+                    (MultiplicityRange
+                      (Subsetting)
+                      (TypeFeaturing)
+                      (OwningMembership
+                        (LiteralInteger
+                          (Subsetting)
+                          (TypeFeaturing)))))
+                  (Redefinition)))))
+          (OwningMembership
+            (PartDefinition BigEngine
+              (Subclassification)
+              (FeatureMembership
+                (PartUsage cyl
+                  (OwningMembership
+                    (MultiplicityRange
+                      (Subsetting)
+                      (TypeFeaturing)
+                      (OwningMembership
+                        (LiteralInteger
+                          (Subsetting)
+                          (TypeFeaturing)))))
+                  (Redefinition)))))
+          (OwningMembership
+            (PartDefinition Cylinder
+              (Subclassification)))))
+      (OwningMembership
+        (Package Enumeration Definitions Example
+          (OwningMembership
+            (EnumerationDefinition TrafficLightColor
+              (Subclassification)
+              (VariantMembership
+                (EnumerationUsage green
+                  (FeatureTyping)
+                  (Subsetting)))
+              (VariantMembership
+                (EnumerationUsage yellow
+                  (FeatureTyping)
+                  (Subsetting)))
+              (VariantMembership
+                (EnumerationUsage red
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (PartDefinition TrafficLight
+              (Subclassification)
+              (FeatureMembership
+                (AttributeUsage currentColor
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (PartDefinition TrafficLightGo
+              (Subclassification)
+              (FeatureMembership
+                (AttributeUsage currentColor
+                  (Redefinition)
+                  (FeatureValue
+                    (FeatureReferenceExpression
+                      (Subsetting)
+                      (TypeFeaturing)
+                      (Membership)))))))
+          (OwningMembership
+            (AttributeDefinition ClassificationLevel
+              (Subclassification)
+              (FeatureMembership
+                (AttributeUsage code
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (AttributeUsage color
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (EnumerationDefinition ClassificationKind
+              (Subclassification)
+              (VariantMembership
+                (EnumerationUsage unclassified
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage code
+                      (Redefinition)
+                      (FeatureValue
+                        (LiteralString
+                          (Subsetting)
+                          (TypeFeaturing)))))
+                  (FeatureMembership
+                    (ReferenceUsage color
+                      (Redefinition)
+                      (FeatureValue
+                        (FeatureReferenceExpression
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (Membership)))))))
+              (VariantMembership
+                (EnumerationUsage confidential
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage code
+                      (Redefinition)
+                      (FeatureValue
+                        (LiteralString
+                          (Subsetting)
+                          (TypeFeaturing)))))
+                  (FeatureMembership
+                    (ReferenceUsage color
+                      (Redefinition)
+                      (FeatureValue
+                        (FeatureReferenceExpression
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (Membership)))))))
+              (VariantMembership
+                (EnumerationUsage secret
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage code
+                      (Redefinition)
+                      (FeatureValue
+                        (LiteralString
+                          (Subsetting)
+                          (TypeFeaturing)))))
+                  (FeatureMembership
+                    (ReferenceUsage color
+                      (Redefinition)
+                      (FeatureValue
+                        (FeatureReferenceExpression
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (Membership)))))))))
+          (OwningMembership
+            (EnumerationDefinition GradePoints
+              (Subclassification)
+              (VariantMembership
+                (EnumerationUsage A
+                  (FeatureTyping)
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureValue
+                    (LiteralRational
+                      (Subsetting)))))
+              (VariantMembership
+                (EnumerationUsage B
+                  (FeatureTyping)
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureValue
+                    (LiteralRational
+                      (Subsetting)))))
+              (VariantMembership
+                (EnumerationUsage C
+                  (FeatureTyping)
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureValue
+                    (LiteralRational
+                      (Subsetting)))))
+              (VariantMembership
+                (EnumerationUsage D
+                  (FeatureTyping)
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureValue
+                    (LiteralRational
+                      (Subsetting)))))
+              (VariantMembership
+                (EnumerationUsage F
+                  (FeatureTyping)
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureValue
+                    (LiteralRational
+                      (Subsetting)))))))))
+      (OwningMembership
+        (Package Parts Example
+          (OwningMembership
+            (PartDefinition Vehicle
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition Engine
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition Cylinder
+              (Subclassification)))
+          (OwningMembership
+            (PartUsage vehicle
+              (FeatureTyping)
+              (Subsetting)
+              (FeatureMembership
+                (PartUsage eng
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (PartUsage cyl
+                      (OwningMembership
+                        (MultiplicityRange
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (OwningMembership
+                            (OperatorExpression
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (ParameterMembership
+                                (Feature
+                                  (FeatureTyping)
+                                  (Subsetting)
+                                  (FeatureValue
+                                    (LiteralInteger
+                                      (Subsetting)
+                                      (TypeFeaturing)))))
+                              (ParameterMembership
+                                (Feature
+                                  (FeatureTyping)
+                                  (Subsetting)
+                                  (FeatureValue
+                                    (LiteralInteger
+                                      (Subsetting)
+                                      (TypeFeaturing)))))))))
+                      (FeatureTyping)
+                      (Subsetting)))))))
+          (OwningMembership
+            (PartUsage smallVehicle
+              (Subsetting)
+              (FeatureMembership
+                (PartUsage eng
+                  (Redefinition)
+                  (FeatureMembership
+                    (PartUsage cyl
+                      (OwningMembership
+                        (MultiplicityRange
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (OwningMembership
+                            (LiteralInteger
+                              (Subsetting)
+                              (TypeFeaturing)))))
+                      (Redefinition)))))))
+          (OwningMembership
+            (PartUsage bigVehicle
+              (Subsetting)
+              (FeatureMembership
+                (PartUsage eng
+                  (Redefinition)
+                  (FeatureMembership
+                    (PartUsage cyl
+                      (OwningMembership
+                        (MultiplicityRange
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (OwningMembership
+                            (LiteralInteger
+                              (Subsetting)
+                              (TypeFeaturing)))))
+                      (Redefinition)))))))))
+      (OwningMembership
+        (Package Items Example
+          (OwningMembership
+            (AttributeDefinition Temp
+              (Subclassification)))
+          (OwningMembership
+            (ItemDefinition Fuel
+              (Subclassification)))
+          (OwningMembership
+            (ItemDefinition Person
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition Vehicle
+              (Subclassification)
+              (FeatureMembership
+                (AttributeUsage mass
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ItemUsage driver
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (PartUsage fuelTank
+                  (Subsetting)
+                  (FeatureMembership
+                    (ItemUsage fuel
+                      (FeatureTyping)
+                      (Subsetting)))))))))
+      (OwningMembership
+        (Package Connections Example
+          (OwningMembership
+            (PartDefinition TireBead
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition TireMountingRim
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition WheelHubAssembly
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition WheelAssembly
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition Tire
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition Wheel
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition LugBoltMountingHole
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition LugBoltSeat
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition LugBoltJoint
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition LugBoltThreadableHole
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition Hub
+              (Subclassification)))
+          (OwningMembership
+            (ConnectionDefinition PressureSeat
+              (Subclassification)
+              (FeatureMembership
+                (PartUsage bead
+                  (OwningMembership
+                    (ReferenceUsage
+                      (OwningMembership
+                        (MultiplicityRange
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (OwningMembership
+                            (LiteralInteger
+                              (Subsetting)
+                              (TypeFeaturing)))))
+                      (Subsetting)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)))
+                  (FeatureTyping)
+                  (Redefinition)
+                  (Subsetting)
+                  (CrossSubsetting
+                    (Feature
+                      (FeatureChaining)
+                      (FeatureChaining)))))
+              (FeatureMembership
+                (PartUsage mountingRim
+                  (OwningMembership
+                    (ReferenceUsage
+                      (OwningMembership
+                        (MultiplicityRange
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (OwningMembership
+                            (LiteralInteger
+                              (Subsetting)
+                              (TypeFeaturing)))))
+                      (Subsetting)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)))
+                  (FeatureTyping)
+                  (Redefinition)
+                  (Subsetting)
+                  (CrossSubsetting
+                    (Feature
+                      (FeatureChaining)
+                      (FeatureChaining)))))))
+          (OwningMembership
+            (PartUsage wheelHubAssembly
+              (FeatureTyping)
+              (Subsetting)
+              (FeatureMembership
+                (PartUsage wheel
+                  (OwningMembership
+                    (MultiplicityRange
+                      (Subsetting)
+                      (TypeFeaturing)
+                      (OwningMembership
+                        (LiteralInteger
+                          (Subsetting)
+                          (TypeFeaturing)))))
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (PartUsage t
+                      (OwningMembership
+                        (MultiplicityRange
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (OwningMembership
+                            (LiteralInteger
+                              (Subsetting)
+                              (TypeFeaturing)))))
+                      (FeatureTyping)
+                      (Subsetting)
+                      (FeatureMembership
+                        (PartUsage bead
+                          (OwningMembership
+                            (MultiplicityRange
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (OwningMembership
+                                (LiteralInteger
+                                  (Subsetting)
+                                  (TypeFeaturing)))))
+                          (FeatureTyping)
+                          (Subsetting)))))
+                  (FeatureMembership
+                    (PartUsage w
+                      (OwningMembership
+                        (MultiplicityRange
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (OwningMembership
+                            (LiteralInteger
+                              (Subsetting)
+                              (TypeFeaturing)))))
+                      (FeatureTyping)
+                      (Subsetting)
+                      (FeatureMembership
+                        (PartUsage rim
+                          (OwningMembership
+                            (MultiplicityRange
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (OwningMembership
+                                (LiteralInteger
+                                  (Subsetting)
+                                  (TypeFeaturing)))))
+                          (FeatureTyping)
+                          (Subsetting)))
+                      (FeatureMembership
+                        (PartUsage mountingHoles
+                          (OwningMembership
+                            (MultiplicityRange
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (OwningMembership
+                                (LiteralInteger
+                                  (Subsetting)
+                                  (TypeFeaturing)))))
+                          (FeatureTyping)
+                          (Subsetting)))))
+                  (FeatureMembership
+                    (ConnectionUsage
+                      (FeatureTyping)
+                      (Subsetting)
+                      (Subsetting)
+                      (EndFeatureMembership
+                        (Feature bead
+                          (ReferenceSubsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)
+                          (Redefinition)))
+                      (EndFeatureMembership
+                        (Feature mountingRim
+                          (ReferenceSubsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)
+                          (Redefinition)))))))
+              (FeatureMembership
+                (PartUsage lugBoltJoints
+                  (OwningMembership
+                    (MultiplicityRange
+                      (Subsetting)
+                      (TypeFeaturing)
+                      (OwningMembership
+                        (OperatorExpression
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (ParameterMembership
+                            (Feature
+                              (FeatureTyping)
+                              (Subsetting)
+                              (FeatureValue
+                                (LiteralInteger
+                                  (Subsetting)
+                                  (TypeFeaturing)))))
+                          (ParameterMembership
+                            (Feature
+                              (FeatureTyping)
+                              (Subsetting)
+                              (FeatureValue
+                                (LiteralInteger
+                                  (Subsetting)
+                                  (TypeFeaturing)))))))))
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (PartUsage hub
+                  (OwningMembership
+                    (MultiplicityRange
+                      (Subsetting)
+                      (TypeFeaturing)
+                      (OwningMembership
+                        (LiteralInteger
+                          (Subsetting)
+                          (TypeFeaturing)))))
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (PartUsage h
+                      (OwningMembership
+                        (MultiplicityRange
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (OwningMembership
+                            (LiteralInteger
+                              (Subsetting)
+                              (TypeFeaturing)))))
+                      (FeatureTyping)
+                      (Subsetting)))))
+              (FeatureMembership
+                (ConnectionUsage
+                  (Subsetting)
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (Feature source
+                      (OwningMembership
+                        (Feature
+                          (OwningMembership
+                            (MultiplicityRange
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (OwningMembership
+                                (OperatorExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (ParameterMembership
+                                    (Feature
+                                      (FeatureTyping)
+                                      (Subsetting)
+                                      (FeatureValue
+                                        (LiteralInteger
+                                          (Subsetting)
+                                          (TypeFeaturing)))))
+                                  (ParameterMembership
+                                    (Feature
+                                      (FeatureTyping)
+                                      (Subsetting)
+                                      (FeatureValue
+                                        (LiteralInteger
+                                          (Subsetting)
+                                          (TypeFeaturing)))))))))
+                          (Subsetting)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)))
+                      (ReferenceSubsetting)
+                      (Redefinition)
+                      (CrossSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))))
+                  (EndFeatureMembership
+                    (Feature target
+                      (OwningMembership
+                        (Feature
+                          (OwningMembership
+                            (MultiplicityRange
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (OwningMembership
+                                (LiteralInteger
+                                  (Subsetting)
+                                  (TypeFeaturing)))))
+                          (Subsetting)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)))
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)
+                      (CrossSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))))))
+              (FeatureMembership
+                (ConnectionUsage
+                  (Subsetting)
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (Feature source
+                      (OwningMembership
+                        (Feature
+                          (OwningMembership
+                            (MultiplicityRange
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (OwningMembership
+                                (OperatorExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (ParameterMembership
+                                    (Feature
+                                      (FeatureTyping)
+                                      (Subsetting)
+                                      (FeatureValue
+                                        (LiteralInteger
+                                          (Subsetting)
+                                          (TypeFeaturing)))))
+                                  (ParameterMembership
+                                    (Feature
+                                      (FeatureTyping)
+                                      (Subsetting)
+                                      (FeatureValue
+                                        (LiteralInteger
+                                          (Subsetting)
+                                          (TypeFeaturing)))))))))
+                          (Subsetting)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)))
+                      (ReferenceSubsetting)
+                      (Redefinition)
+                      (CrossSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))))
+                  (EndFeatureMembership
+                    (Feature target
+                      (OwningMembership
+                        (Feature
+                          (OwningMembership
+                            (MultiplicityRange
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (OwningMembership
+                                (LiteralInteger
+                                  (Subsetting)
+                                  (TypeFeaturing)))))
+                          (Subsetting)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (FeatureTyping)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)
+                          (TypeFeaturing)))
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)
+                      (CrossSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))))))))))
+      (OwningMembership
+        (Package Ports Example
+          (MembershipImport)
+          (MembershipImport)
+          (OwningMembership
+            (PortDefinition FuelOutPort
+              (Subclassification)
+              (OwningMembership
+                (ConjugatedPortDefinition ~FuelOutPort
+                  (PortConjugation)))
+              (FeatureMembership
+                (AttributeUsage temperature
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ItemUsage fuelSupply
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ItemUsage fuelReturn
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (PortDefinition FuelInPort
+              (Subclassification)
+              (OwningMembership
+                (ConjugatedPortDefinition ~FuelInPort
+                  (PortConjugation)))
+              (FeatureMembership
+                (AttributeUsage temperature
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ItemUsage fuelSupply
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ItemUsage fuelReturn
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (PartDefinition FuelTankAssembly
+              (Subclassification)
+              (FeatureMembership
+                (PortUsage fuelTankPort
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (PartDefinition Engine
+              (Subclassification)
+              (FeatureMembership
+                (PortUsage engineFuelPort
+                  (FeatureTyping)
+                  (Subsetting)))))))
+      (OwningMembership
+        (Package Port Conjugation Example
+          (MembershipImport)
+          (MembershipImport)
+          (OwningMembership
+            (PortDefinition FuelPort
+              (Subclassification)
+              (OwningMembership
+                (ConjugatedPortDefinition ~FuelPort
+                  (PortConjugation)))
+              (FeatureMembership
+                (AttributeUsage temperature
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ItemUsage fuelSupply
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ItemUsage fuelReturn
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (PartDefinition FuelTankAssembly
+              (Subclassification)
+              (FeatureMembership
+                (PortUsage fuelTankPort
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (PartDefinition Engine
+              (Subclassification)
+              (FeatureMembership
+                (PortUsage engineFuelPort
+                  (ConjugatedPortTyping)
+                  (Subsetting)))))))
+      (OwningMembership
+        (Package Interfaces Example
+          (MembershipImport)
+          (MembershipImport)
+          (MembershipImport)
+          (MembershipImport)
+          (MembershipImport)
+          (OwningMembership
+            (InterfaceDefinition FuelInterface
+              (Subclassification)
+              (FeatureMembership
+                (PortUsage supplierPort
+                  (FeatureTyping)
+                  (Redefinition)))
+              (FeatureMembership
+                (PortUsage consumerPort
+                  (FeatureTyping)
+                  (Redefinition)))))
+          (OwningMembership
+            (PartUsage vehicle
+              (FeatureTyping)
+              (Subsetting)
+              (FeatureMembership
+                (PartUsage tankAssy
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (PartUsage eng
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (InterfaceUsage
+                  (FeatureTyping)
+                  (Subsetting)
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (PortUsage supplierPort
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)
+                      (Redefinition)))
+                  (EndFeatureMembership
+                    (PortUsage consumerPort
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)
+                      (Redefinition)))))))))
+      (OwningMembership
+        (Package Interface Decomposition Example
+          (OwningMembership
+            (PortDefinition SpigotBank
+              (Subclassification)
+              (OwningMembership
+                (ConjugatedPortDefinition ~SpigotBank
+                  (PortConjugation)))))
+          (OwningMembership
+            (PortDefinition Spigot
+              (Subclassification)
+              (OwningMembership
+                (ConjugatedPortDefinition ~Spigot
+                  (PortConjugation)))))
+          (OwningMembership
+            (PortDefinition Faucet
+              (Subclassification)
+              (OwningMembership
+                (ConjugatedPortDefinition ~Faucet
+                  (PortConjugation)))))
+          (OwningMembership
+            (PortDefinition FaucetInlet
+              (Subclassification)
+              (OwningMembership
+                (ConjugatedPortDefinition ~FaucetInlet
+                  (PortConjugation)))))
+          (OwningMembership
+            (InterfaceDefinition WaterDelivery
+              (Subclassification)
+              (FeatureMembership
+                (PortUsage suppliedBy
+                  (OwningMembership
+                    (ReferenceUsage
+                      (OwningMembership
+                        (MultiplicityRange
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (OwningMembership
+                            (LiteralInteger
+                              (Subsetting)
+                              (TypeFeaturing)))))
+                      (Subsetting)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)))
+                  (FeatureTyping)
+                  (Redefinition)
+                  (CrossSubsetting
+                    (Feature
+                      (FeatureChaining)
+                      (FeatureChaining)))
+                  (FeatureMembership
+                    (PortUsage hot
+                      (FeatureTyping)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (PortUsage cold
+                      (FeatureTyping)
+                      (Subsetting)))))
+              (FeatureMembership
+                (PortUsage deliveredTo
+                  (OwningMembership
+                    (ReferenceUsage
+                      (OwningMembership
+                        (MultiplicityRange
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (OwningMembership
+                            (OperatorExpression
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (ParameterMembership
+                                (Feature
+                                  (FeatureTyping)
+                                  (Subsetting)
+                                  (FeatureValue
+                                    (LiteralInteger
+                                      (Subsetting)
+                                      (TypeFeaturing)))))
+                              (ParameterMembership
+                                (Feature
+                                  (FeatureTyping)
+                                  (Subsetting)
+                                  (FeatureValue
+                                    (LiteralInfinity
+                                      (Subsetting)
+                                      (TypeFeaturing)))))))))
+                      (Subsetting)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (FeatureTyping)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)
+                      (TypeFeaturing)))
+                  (FeatureTyping)
+                  (Redefinition)
+                  (CrossSubsetting
+                    (Feature
+                      (FeatureChaining)
+                      (FeatureChaining)))
+                  (FeatureMembership
+                    (PortUsage hot
+                      (FeatureTyping)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (PortUsage cold
+                      (FeatureTyping)
+                      (Subsetting)))))
+              (FeatureMembership
+                (ConnectionUsage
+                  (Subsetting)
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (Feature source
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))
+                  (EndFeatureMembership
+                    (Feature target
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))))
+              (FeatureMembership
+                (ConnectionUsage
+                  (Subsetting)
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (Feature source
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))
+                  (EndFeatureMembership
+                    (Feature target
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))))))))
+      (OwningMembership
+        (Package Binding Connections
+          (MembershipImport)
+          (MembershipImport)
+          (OwningMembership
+            (PartDefinition FuelPump
+              (Subclassification)))
+          (OwningMembership
+            (PartDefinition FuelTank
+              (Subclassification)))
+          (OwningMembership
+            (PartUsage tank
+              (FeatureTyping)
+              (Subsetting)
+              (FeatureMembership
+                (PortUsage fuelTankPort
+                  (Redefinition)
+                  (FeatureMembership
+                    (ItemUsage fuelSupply
+                      (Redefinition)))
+                  (FeatureMembership
+                    (ItemUsage fuelReturn
+                      (Redefinition)))))
+              (FeatureMembership
+                (BindingConnectorAsUsage
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (Feature thisThing
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))
+                  (EndFeatureMembership
+                    (Feature sameThing
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))))
+              (FeatureMembership
+                (BindingConnectorAsUsage
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (Feature thisThing
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))
+                  (EndFeatureMembership
+                    (Feature sameThing
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))))
+              (FeatureMembership
+                (PartUsage pump
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ItemUsage pumpOut
+                      (FeatureTyping)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (ItemUsage pumpIn
+                      (FeatureTyping)
+                      (Subsetting)))))
+              (FeatureMembership
+                (PartUsage tank
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ItemUsage fuelOut
+                      (FeatureTyping)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (ItemUsage fuelIn
+                      (FeatureTyping)
+                      (Subsetting)))))))))
+      (OwningMembership
+        (Package Binding Connections - Feature Values Example))
+      (OwningMembership
+        (Package Flow Usage Example))
+      (OwningMembership
+        (Package Flows in Interfaces Example))
+      (OwningMembership
+        (Package Flow Definitions Example))
+      (OwningMembership
+        (Package Action Definition Example
+          (OwningMembership
+            (ItemDefinition Scene
+              (Subclassification)))
+          (OwningMembership
+            (ItemDefinition Image
+              (Subclassification)))
+          (OwningMembership
+            (ItemDefinition Picture
+              (Subclassification)))
+          (OwningMembership
+            (ActionDefinition Focus
+              (Subclassification)
+              (FeatureMembership
+                (ReferenceUsage scene
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ReferenceUsage image
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (ActionDefinition Shoot
+              (Subclassification)
+              (FeatureMembership
+                (ReferenceUsage image
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ReferenceUsage picture
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (ActionDefinition TakePicture
+              (Subclassification)
+              (FeatureMembership
+                (ReferenceUsage scene
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ReferenceUsage picture
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (BindingConnectorAsUsage
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (Feature thisThing
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))
+                  (EndFeatureMembership
+                    (Feature sameThing
+                      (ReferenceSubsetting)
+                      (Redefinition)))))
+              (FeatureMembership
+                (ActionUsage focus
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage scene
+                      (Redefinition)))
+                  (FeatureMembership
+                    (ReferenceUsage image
+                      (Redefinition)))))
+              (FeatureMembership
+                (FlowUsage
+                  (Subsetting)
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (FlowEnd source
+                      (ReferenceSubsetting)
+                      (Redefinition)
+                      (Redefinition)
+                      (FeatureMembership
+                        (ReferenceUsage image
+                          (Redefinition)))))
+                  (EndFeatureMembership
+                    (FlowEnd target
+                      (ReferenceSubsetting)
+                      (Redefinition)
+                      (Redefinition)
+                      (FeatureMembership
+                        (ReferenceUsage image
+                          (Redefinition)))))))
+              (FeatureMembership
+                (ActionUsage shoot
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage image
+                      (Redefinition)))
+                  (FeatureMembership
+                    (ReferenceUsage picture
+                      (Redefinition)))))
+              (FeatureMembership
+                (BindingConnectorAsUsage
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (Feature thisThing
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))
+                  (EndFeatureMembership
+                    (Feature sameThing
+                      (ReferenceSubsetting)
+                      (Redefinition)))))))))
+      (OwningMembership
+        (Package Action Succession 1 Example
+          (OwningMembership
+            (ItemDefinition Scene
+              (Subclassification)))
+          (OwningMembership
+            (ItemDefinition Image
+              (Subclassification)))
+          (OwningMembership
+            (ItemDefinition Picture
+              (Subclassification)))
+          (OwningMembership
+            (ActionDefinition Focus
+              (Subclassification)
+              (FeatureMembership
+                (ReferenceUsage scene
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ReferenceUsage image
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (ActionDefinition Shoot
+              (Subclassification)
+              (FeatureMembership
+                (ReferenceUsage image
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ReferenceUsage picture
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (ActionDefinition TakePicture
+              (Subclassification)
+              (FeatureMembership
+                (ReferenceUsage scene
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ReferenceUsage picture
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (BindingConnectorAsUsage
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (Feature thisThing
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))
+                  (EndFeatureMembership
+                    (Feature sameThing
+                      (ReferenceSubsetting)
+                      (Redefinition)))))
+              (FeatureMembership
+                (ActionUsage focus
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage scene
+                      (Redefinition)))
+                  (FeatureMembership
+                    (ReferenceUsage image
+                      (Redefinition)))))
+              (FeatureMembership
+                (FlowUsage
+                  (Subsetting)
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (FlowEnd source
+                      (ReferenceSubsetting)
+                      (Redefinition)
+                      (Redefinition)
+                      (FeatureMembership
+                        (ReferenceUsage image
+                          (Redefinition)))))
+                  (EndFeatureMembership
+                    (FlowEnd target
+                      (ReferenceSubsetting)
+                      (Redefinition)
+                      (Redefinition)
+                      (FeatureMembership
+                        (ReferenceUsage image
+                          (Redefinition)))))))
+              (FeatureMembership
+                (SuccessionAsUsage
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (Feature earlierOccurrence
+                      (ReferenceSubsetting)
+                      (Redefinition)))
+                  (EndFeatureMembership
+                    (Feature laterOccurrence
+                      (ReferenceSubsetting)
+                      (Redefinition)))))
+              (FeatureMembership
+                (ActionUsage shoot
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage image
+                      (Redefinition)))
+                  (FeatureMembership
+                    (ReferenceUsage picture
+                      (Redefinition)))))
+              (FeatureMembership
+                (BindingConnectorAsUsage
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (Feature thisThing
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))
+                  (EndFeatureMembership
+                    (Feature sameThing
+                      (ReferenceSubsetting)
+                      (Redefinition)))))))))
+      (OwningMembership
+        (Package Action Succession 2 Example
+          (OwningMembership
+            (ItemDefinition Scene
+              (Subclassification)))
+          (OwningMembership
+            (ItemDefinition Image
+              (Subclassification)))
+          (OwningMembership
+            (ItemDefinition Picture
+              (Subclassification)))
+          (OwningMembership
+            (ActionDefinition Focus
+              (Subclassification)
+              (FeatureMembership
+                (ReferenceUsage scene
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ReferenceUsage image
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (ActionDefinition Shoot
+              (Subclassification)
+              (FeatureMembership
+                (ReferenceUsage image
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ReferenceUsage picture
+                  (FeatureTyping)
+                  (Subsetting)))))
+          (OwningMembership
+            (ActionDefinition TakePicture
+              (Subclassification)
+              (FeatureMembership
+                (ReferenceUsage scene
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (ReferenceUsage picture
+                  (FeatureTyping)
+                  (Subsetting)))
+              (FeatureMembership
+                (BindingConnectorAsUsage
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (Feature thisThing
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))
+                  (EndFeatureMembership
+                    (Feature sameThing
+                      (ReferenceSubsetting)
+                      (Redefinition)))))
+              (FeatureMembership
+                (ActionUsage focus
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage scene
+                      (Redefinition)))
+                  (FeatureMembership
+                    (ReferenceUsage image
+                      (Redefinition)))))
+              (FeatureMembership
+                (SuccessionFlowUsage
+                  (Subsetting)
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (FlowEnd source
+                      (ReferenceSubsetting)
+                      (Redefinition)
+                      (Redefinition)
+                      (FeatureMembership
+                        (ReferenceUsage image
+                          (Redefinition)))))
+                  (EndFeatureMembership
+                    (FlowEnd target
+                      (ReferenceSubsetting)
+                      (Redefinition)
+                      (Redefinition)
+                      (FeatureMembership
+                        (ReferenceUsage image
+                          (Redefinition)))))))
+              (FeatureMembership
+                (ActionUsage shoot
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage image
+                      (Redefinition)))
+                  (FeatureMembership
+                    (ReferenceUsage picture
+                      (Redefinition)))))
+              (FeatureMembership
+                (BindingConnectorAsUsage
+                  (Subsetting)
+                  (EndFeatureMembership
+                    (Feature thisThing
+                      (ReferenceSubsetting
+                        (Feature
+                          (FeatureChaining)
+                          (FeatureChaining)))
+                      (Redefinition)))
+                  (EndFeatureMembership
+                    (Feature sameThing
+                      (ReferenceSubsetting)
+                      (Redefinition)))))))))
+      (OwningMembership
+        (Package State Definitions Example
+          (MembershipImport)
+          (OwningMembership
+            (PartDefinition VehicleController
+              (Subclassification)))
+          (OwningMembership
+            (ActionDefinition ControllerStartSignal
+              (Subclassification)))
+          (OwningMembership
+            (ActionDefinition VehicleStartSignal
+              (Subclassification)))
+          (OwningMembership
+            (ActionDefinition VehicleOnSignal
+              (Subclassification)))
+          (OwningMembership
+            (ActionDefinition VehicleOffSignal
+              (Subclassification)))
+          (OwningMembership
+            (Package State Definitions 1
+              (OwningMembership
+                (StateDefinition VehicleStates
+                  (Subclassification)
+                  (StateSubactionMembership
+                    (ActionUsage entryAction
+                      (Redefinition)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (SuccessionAsUsage
+                      (Subsetting)
+                      (EndFeatureMembership
+                        (ReferenceUsage earlierOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))
+                      (EndFeatureMembership
+                        (Feature laterOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage off
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage off_to_starting
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage starting
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage starting_to_on
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage on
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (TransitionUsage on_to_off
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))))))
+          (OwningMembership
+            (Package State Definitions 2
+              (OwningMembership
+                (StateDefinition VehicleStates
+                  (Subclassification)
+                  (StateSubactionMembership
+                    (ActionUsage entryAction
+                      (Redefinition)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (SuccessionAsUsage
+                      (Subsetting)
+                      (EndFeatureMembership
+                        (ReferenceUsage earlierOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))
+                      (EndFeatureMembership
+                        (Feature laterOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage off
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage starting
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage on
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))))))
+          (OwningMembership
+            (Package State Decomposition
+              (OwningMembership
+                (StateDefinition VehicleStates
+                  (Subclassification)))
+              (OwningMembership
+                (StateUsage vehicleStates
+                  (FeatureTyping)
+                  (Subsetting)
+                  (StateSubactionMembership
+                    (ActionUsage
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (SuccessionAsUsage
+                      (Subsetting)
+                      (EndFeatureMembership
+                        (ReferenceUsage earlierOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))
+                      (EndFeatureMembership
+                        (Feature laterOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage off
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage starting
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage on
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))))))
+          (OwningMembership
+            (Package Concurrent States
+              (OwningMembership
+                (StateDefinition VehicleStates
+                  (Subclassification)))
+              (OwningMembership
+                (StateUsage vehicleStates
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (StateUsage operationalStates
+                      (Subsetting)
+                      (Subsetting)
+                      (StateSubactionMembership
+                        (ActionUsage
+                          (Subsetting)
+                          (Subsetting)))
+                      (FeatureMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (StateUsage off
+                          (Subsetting)
+                          (Subsetting)))
+                      (FeatureMembership
+                        (TransitionUsage
+                          (Subsetting)
+                          (Membership)
+                          (ParameterMembership
+                            (ReferenceUsage transitionLinkSource
+                              (Redefinition)))
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (Subsetting
+                                (Feature
+                                  (FeatureChaining)
+                                  (FeatureChaining)))
+                              (Redefinition)))
+                          (TransitionFeatureMembership
+                            (AcceptActionUsage accepter
+                              (Redefinition)
+                              (ParameterMembership
+                                (ReferenceUsage
+                                  (FeatureTyping)
+                                  (Subsetting)
+                                  (Redefinition)))))
+                          (OwningMembership
+                            (SuccessionAsUsage
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (EndFeatureMembership
+                                (ReferenceUsage earlierOccurrence
+                                  (ReferenceSubsetting)
+                                  (Redefinition)))
+                              (EndFeatureMembership
+                                (Feature laterOccurrence
+                                  (ReferenceSubsetting)
+                                  (Redefinition)))))
+                          (FeatureMembership
+                            (ReferenceUsage transitionLink
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (StateUsage starting
+                          (Subsetting)
+                          (Subsetting)))
+                      (FeatureMembership
+                        (TransitionUsage
+                          (Subsetting)
+                          (Membership)
+                          (ParameterMembership
+                            (ReferenceUsage transitionLinkSource
+                              (Redefinition)))
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (Subsetting
+                                (Feature
+                                  (FeatureChaining)
+                                  (FeatureChaining)))
+                              (Redefinition)))
+                          (TransitionFeatureMembership
+                            (AcceptActionUsage accepter
+                              (Redefinition)
+                              (ParameterMembership
+                                (ReferenceUsage
+                                  (FeatureTyping)
+                                  (Subsetting)
+                                  (Redefinition)))))
+                          (OwningMembership
+                            (SuccessionAsUsage
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (EndFeatureMembership
+                                (ReferenceUsage earlierOccurrence
+                                  (ReferenceSubsetting)
+                                  (Redefinition)))
+                              (EndFeatureMembership
+                                (Feature laterOccurrence
+                                  (ReferenceSubsetting)
+                                  (Redefinition)))))
+                          (FeatureMembership
+                            (ReferenceUsage transitionLink
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (StateUsage on
+                          (Subsetting)
+                          (Subsetting)))
+                      (FeatureMembership
+                        (TransitionUsage
+                          (Subsetting)
+                          (Membership)
+                          (ParameterMembership
+                            (ReferenceUsage transitionLinkSource
+                              (Redefinition)))
+                          (OwningMembership
+                            (SuccessionAsUsage
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (EndFeatureMembership
+                                (ReferenceUsage earlierOccurrence
+                                  (ReferenceSubsetting)
+                                  (Redefinition)))
+                              (EndFeatureMembership
+                                (Feature laterOccurrence
+                                  (ReferenceSubsetting)
+                                  (Redefinition)))))
+                          (FeatureMembership
+                            (ReferenceUsage transitionLink
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (TransitionUsage
+                          (Subsetting)
+                          (Membership)
+                          (ParameterMembership
+                            (ReferenceUsage transitionLinkSource
+                              (Redefinition)))
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (Subsetting
+                                (Feature
+                                  (FeatureChaining)
+                                  (FeatureChaining)))
+                              (Redefinition)))
+                          (TransitionFeatureMembership
+                            (AcceptActionUsage accepter
+                              (Redefinition)
+                              (ParameterMembership
+                                (ReferenceUsage
+                                  (FeatureTyping)
+                                  (Subsetting)
+                                  (Redefinition)))))
+                          (OwningMembership
+                            (SuccessionAsUsage
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (EndFeatureMembership
+                                (ReferenceUsage earlierOccurrence
+                                  (ReferenceSubsetting)
+                                  (Redefinition)))
+                              (EndFeatureMembership
+                                (Feature laterOccurrence
+                                  (ReferenceSubsetting)
+                                  (Redefinition)))))
+                          (FeatureMembership
+                            (ReferenceUsage transitionLink
+                              (Redefinition)))))))
+                  (FeatureMembership
+                    (StateUsage healthStates
+                      (Subsetting)
+                      (Subsetting)
+                      (StateSubactionMembership
+                        (ActionUsage
+                          (Subsetting)
+                          (Subsetting)))
+                      (FeatureMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (StateUsage off
+                          (Subsetting)
+                          (Subsetting)))
+                      (FeatureMembership
+                        (TransitionUsage
+                          (Subsetting)
+                          (Membership)
+                          (ParameterMembership
+                            (ReferenceUsage transitionLinkSource
+                              (Redefinition)))
+                          (OwningMembership
+                            (SuccessionAsUsage
+                              (Subsetting)
+                              (TypeFeaturing)
+                              (EndFeatureMembership
+                                (ReferenceUsage earlierOccurrence
+                                  (ReferenceSubsetting)
+                                  (Redefinition)))
+                              (EndFeatureMembership
+                                (Feature laterOccurrence
+                                  (ReferenceSubsetting)
+                                  (Redefinition)))))
+                          (FeatureMembership
+                            (ReferenceUsage transitionLink
+                              (Redefinition)))))))))))
+          (OwningMembership
+            (Package State Entry, Do and Exit Actions
+              (OwningMembership
+                (ActionUsage performSelfTest
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage vehicle
+                      (FeatureTyping)
+                      (Subsetting)))))
+              (OwningMembership
+                (StateDefinition VehicleStates
+                  (Subclassification)
+                  (FeatureMembership
+                    (ReferenceUsage operatingVehicle
+                      (FeatureTyping)
+                      (Subsetting)))))
+              (OwningMembership
+                (StateUsage vehicleStates
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage operatingVehicle
+                      (FeatureTyping)
+                      (Redefinition)))
+                  (StateSubactionMembership
+                    (ActionUsage
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (SuccessionAsUsage
+                      (Subsetting)
+                      (EndFeatureMembership
+                        (ReferenceUsage earlierOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))
+                      (EndFeatureMembership
+                        (Feature laterOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage off
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage starting
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage on
+                      (Subsetting)
+                      (Subsetting)
+                      (StateSubactionMembership
+                        (PerformActionUsage performSelfTest
+                          (ReferenceSubsetting)
+                          (Subsetting)
+                          (FeatureMembership
+                            (ReferenceUsage vehicle
+                              (Redefinition)
+                              (Subsetting)
+                              (FeatureValue
+                                (FeatureReferenceExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (Membership)))))))
+                      (StateSubactionMembership
+                        (PerformActionUsage providePower
+                          (Subsetting)
+                          (Subsetting)))
+                      (StateSubactionMembership
+                        (PerformActionUsage applyParkingBrake
+                          (Subsetting)
+                          (Subsetting)))))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))))))
+          (OwningMembership
+            (Package Transition Guard and Effect Actions - No format
+              (OwningMembership
+                (ActionUsage performSelfTest
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage vehicle
+                      (FeatureTyping)
+                      (Subsetting)))))
+              (OwningMembership
+                (StateDefinition VehicleStates
+                  (Subclassification)
+                  (FeatureMembership
+                    (ReferenceUsage operatingVehicle
+                      (FeatureTyping)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (ReferenceUsage controller
+                      (FeatureTyping)
+                      (Subsetting)))))
+              (OwningMembership
+                (StateUsage vehicleStates
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage operatingVehicle
+                      (FeatureTyping)
+                      (Redefinition)))
+                  (FeatureMembership
+                    (ReferenceUsage controller
+                      (FeatureTyping)
+                      (Redefinition)))
+                  (StateSubactionMembership
+                    (ActionUsage
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (SuccessionAsUsage
+                      (Subsetting)
+                      (EndFeatureMembership
+                        (ReferenceUsage earlierOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))
+                      (EndFeatureMembership
+                        (Feature laterOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage off
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (TransitionFeatureMembership
+                        (FeatureChainExpression
+                          (Subsetting)
+                          (Subsetting)
+                          (ParameterMembership
+                            (Feature
+                              (Subsetting)
+                              (FeatureValue
+                                (FeatureReferenceExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (Membership)))))
+                          (Membership)))
+                      (TransitionFeatureMembership
+                        (SendActionUsage effect
+                          (Redefinition)
+                          (Subsetting)
+                          (ParameterMembership
+                            (ReferenceUsage payload
+                              (Redefinition)
+                              (FeatureTyping)
+                              (Subsetting)
+                              (FeatureValue
+                                (ConstructorExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (Membership)
+                                  (ReturnParameterMembership
+                                    (Feature
+                                      (FeatureTyping)
+                                      (Subsetting)))))))
+                          (ParameterMembership
+                            (ReferenceUsage sender
+                              (Redefinition)))
+                          (ParameterMembership
+                            (ReferenceUsage receiver
+                              (Redefinition)
+                              (Subsetting)
+                              (FeatureValue
+                                (FeatureReferenceExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (Membership)))))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage starting
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage on
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))))))
+          (OwningMembership
+            (Package Transition Guards and Effect Actions
+              (OwningMembership
+                (ActionUsage performSelfTest
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage vehicle
+                      (FeatureTyping)
+                      (Subsetting)))))
+              (OwningMembership
+                (StateDefinition VehicleStates
+                  (Subclassification)
+                  (FeatureMembership
+                    (ReferenceUsage operatingVehicle
+                      (FeatureTyping)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (ReferenceUsage controller
+                      (FeatureTyping)
+                      (Subsetting)))))
+              (OwningMembership
+                (StateUsage vehicleStates
+                  (FeatureTyping)
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage operatingVehicle
+                      (FeatureTyping)
+                      (Redefinition)))
+                  (FeatureMembership
+                    (ReferenceUsage controller
+                      (FeatureTyping)
+                      (Redefinition)))
+                  (StateSubactionMembership
+                    (ActionUsage
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (SuccessionAsUsage
+                      (Subsetting)
+                      (EndFeatureMembership
+                        (ReferenceUsage earlierOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))
+                      (EndFeatureMembership
+                        (Feature laterOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage off
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (TransitionFeatureMembership
+                        (FeatureChainExpression
+                          (Subsetting)
+                          (Subsetting)
+                          (ParameterMembership
+                            (Feature
+                              (Subsetting)
+                              (FeatureValue
+                                (FeatureReferenceExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (Membership)))))
+                          (Membership)))
+                      (TransitionFeatureMembership
+                        (SendActionUsage effect
+                          (Redefinition)
+                          (Subsetting)
+                          (ParameterMembership
+                            (ReferenceUsage payload
+                              (Redefinition)
+                              (FeatureTyping)
+                              (Subsetting)
+                              (FeatureValue
+                                (ConstructorExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (Membership)
+                                  (ReturnParameterMembership
+                                    (Feature
+                                      (FeatureTyping)
+                                      (Subsetting)))))))
+                          (ParameterMembership
+                            (ReferenceUsage sender
+                              (Redefinition)))
+                          (ParameterMembership
+                            (ReferenceUsage receiver
+                              (Redefinition)
+                              (Subsetting)
+                              (FeatureValue
+                                (FeatureReferenceExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (Membership)))))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage starting
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage on
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))))))
+          (OwningMembership
+            (Package Change and Time Triggers
+              (OwningMembership
+                (ActionDefinition OverTemp
+                  (Subclassification)))
+              (OwningMembership
+                (AttributeDefinition TemperatureValue
+                  (Subclassification)))
+              (OwningMembership
+                (ActionUsage senseTemperature
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage temp
+                      (FeatureTyping)
+                      (Subsetting)))))
+              (OwningMembership
+                (StateUsage healthStates
+                  (Subsetting)
+                  (FeatureMembership
+                    (ReferenceUsage vehicle
+                      (FeatureTyping)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (ReferenceUsage controller
+                      (FeatureTyping)
+                      (Subsetting)))
+                  (StateSubactionMembership
+                    (ActionUsage
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (SuccessionAsUsage
+                      (Subsetting)
+                      (EndFeatureMembership
+                        (ReferenceUsage earlierOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))
+                      (EndFeatureMembership
+                        (Feature laterOccurrence
+                          (ReferenceSubsetting)
+                          (Redefinition)))))
+                  (StateSubactionMembership
+                    (PerformActionUsage senseTemperature
+                      (ReferenceSubsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (StateUsage normal
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (Subsetting)
+                              (Redefinition)
+                              (FeatureValue
+                                (TriggerInvocationExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (ParameterMembership
+                                    (Feature
+                                      (Subsetting)
+                                      (FeatureValue
+                                        (FeatureChainExpression
+                                          (Subsetting)
+                                          (TypeFeaturing)
+                                          (ParameterMembership
+                                            (Feature
+                                              (Subsetting)
+                                              (FeatureValue
+                                                (FeatureReferenceExpression
+                                                  (Subsetting)
+                                                  (TypeFeaturing)
+                                                  (Membership)))))
+                                          (Membership)))))))))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)
+                              (FeatureValue
+                                (TriggerInvocationExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (ParameterMembership
+                                    (Feature
+                                      (Subsetting)
+                                      (FeatureValue
+                                        (FeatureReferenceExpression
+                                          (Subsetting)
+                                          (TypeFeaturing)
+                                          (FeatureMembership
+                                            (OperatorExpression
+                                              (Subsetting)
+                                              (Subsetting)
+                                              (ParameterMembership
+                                                (Feature
+                                                  (Subsetting)
+                                                  (FeatureValue
+                                                    (FeatureChainExpression
+                                                      (Subsetting)
+                                                      (TypeFeaturing)
+                                                      (ParameterMembership
+                                                        (Feature
+                                                          (Subsetting)
+                                                          (FeatureValue
+                                                            (FeatureReferenceExpression
+                                                              (Subsetting)
+                                                              (TypeFeaturing)
+                                                              (Membership)))))
+                                                      (Membership)))))
+                                              (ParameterMembership
+                                                (Feature
+                                                  (Subsetting)
+                                                  (FeatureValue
+                                                    (FeatureChainExpression
+                                                      (Subsetting)
+                                                      (TypeFeaturing)
+                                                      (ParameterMembership
+                                                        (Feature
+                                                          (Subsetting)
+                                                          (FeatureValue
+                                                            (FeatureReferenceExpression
+                                                              (Subsetting)
+                                                              (TypeFeaturing)
+                                                              (Membership)))))
+                                                      (Membership)))))))))))))))))
+                      (TransitionFeatureMembership
+                        (SendActionUsage effect
+                          (Redefinition)
+                          (Subsetting)
+                          (ParameterMembership
+                            (ReferenceUsage payload
+                              (Redefinition)
+                              (FeatureTyping)
+                              (Subsetting)
+                              (FeatureValue
+                                (ConstructorExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (Membership)
+                                  (ReturnParameterMembership
+                                    (Feature
+                                      (FeatureTyping)
+                                      (Subsetting)))))))
+                          (ParameterMembership
+                            (ReferenceUsage sender
+                              (Redefinition)))
+                          (ParameterMembership
+                            (ReferenceUsage receiver
+                              (Redefinition)
+                              (Subsetting)
+                              (FeatureValue
+                                (FeatureReferenceExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (Membership)))))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage maintenance
+                      (Subsetting)
+                      (Subsetting)
+                      (StateSubactionMembership
+                        (AssignmentActionUsage
+                          (Subsetting)
+                          (Subsetting)
+                          (ParameterMembership
+                            (ReferenceUsage target
+                              (Redefinition)
+                              (Subsetting)
+                              (FeatureValue
+                                (FeatureReferenceExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (Membership)))))
+                          (Membership)
+                          (ParameterMembership
+                            (ReferenceUsage replacementValues
+                              (Redefinition)
+                              (FeatureTyping)
+                              (Subsetting)
+                              (FeatureValue
+                                (OperatorExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (ParameterMembership
+                                    (Feature
+                                      (Subsetting)
+                                      (FeatureValue
+                                        (FeatureChainExpression
+                                          (Subsetting)
+                                          (TypeFeaturing)
+                                          (ParameterMembership
+                                            (Feature
+                                              (Subsetting)
+                                              (FeatureValue
+                                                (FeatureReferenceExpression
+                                                  (Subsetting)
+                                                  (TypeFeaturing)
+                                                  (Membership)))))
+                                          (Membership)))))
+                                  (ParameterMembership
+                                    (Feature
+                                      (Subsetting)
+                                      (FeatureValue
+                                        (FeatureChainExpression
+                                          (Subsetting)
+                                          (TypeFeaturing)
+                                          (ParameterMembership
+                                            (Feature
+                                              (Subsetting)
+                                              (FeatureValue
+                                                (FeatureReferenceExpression
+                                                  (Subsetting)
+                                                  (TypeFeaturing)
+                                                  (Membership)))))
+                                          (Membership)))))))))))))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)
+                              (FeatureValue
+                                (TriggerInvocationExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (ParameterMembership
+                                    (Feature
+                                      (FeatureTyping)
+                                      (Subsetting)
+                                      (FeatureValue
+                                        (OperatorExpression
+                                          (Subsetting)
+                                          (TypeFeaturing)
+                                          (ParameterMembership
+                                            (Feature
+                                              (FeatureTyping)
+                                              (Subsetting)
+                                              (FeatureValue
+                                                (LiteralInteger
+                                                  (Subsetting)
+                                                  (TypeFeaturing)))))
+                                          (ParameterMembership
+                                            (Feature
+                                              (Subsetting)
+                                              (FeatureValue
+                                                (FeatureReferenceExpression
+                                                  (Subsetting)
+                                                  (TypeFeaturing)
+                                                  (Membership)))))))))))))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition)))))
+                  (FeatureMembership
+                    (StateUsage degraded
+                      (Subsetting)
+                      (Subsetting)))
+                  (FeatureMembership
+                    (TransitionUsage
+                      (Subsetting)
+                      (Membership)
+                      (ParameterMembership
+                        (ReferenceUsage transitionLinkSource
+                          (Redefinition)))
+                      (ParameterMembership
+                        (ReferenceUsage
+                          (Subsetting
+                            (Feature
+                              (FeatureChaining)
+                              (FeatureChaining)))
+                          (Redefinition)))
+                      (TransitionFeatureMembership
+                        (AcceptActionUsage accepter
+                          (Redefinition)
+                          (ParameterMembership
+                            (ReferenceUsage
+                              (FeatureTyping)
+                              (Subsetting)
+                              (Redefinition)
+                              (FeatureValue
+                                (TriggerInvocationExpression
+                                  (Subsetting)
+                                  (TypeFeaturing)
+                                  (ParameterMembership
+                                    (Feature
+                                      (Subsetting)
+                                      (FeatureValue
+                                        (FeatureReferenceExpression
+                                          (Subsetting)
+                                          (TypeFeaturing)
+                                          (FeatureMembership
+                                            (OperatorExpression
+                                              (Subsetting)
+                                              (Subsetting)
+                                              (ParameterMembership
+                                                (Feature
+                                                  (Subsetting)
+                                                  (FeatureValue
+                                                    (FeatureChainExpression
+                                                      (Subsetting)
+                                                      (TypeFeaturing)
+                                                      (ParameterMembership
+                                                        (Feature
+                                                          (Subsetting)
+                                                          (FeatureValue
+                                                            (FeatureReferenceExpression
+                                                              (Subsetting)
+                                                              (TypeFeaturing)
+                                                              (Membership)))))
+                                                      (Membership)))))
+                                              (ParameterMembership
+                                                (Feature
+                                                  (Subsetting)
+                                                  (FeatureValue
+                                                    (FeatureChainExpression
+                                                      (Subsetting)
+                                                      (TypeFeaturing)
+                                                      (ParameterMembership
+                                                        (Feature
+                                                          (Subsetting)
+                                                          (FeatureValue
+                                                            (FeatureReferenceExpression
+                                                              (Subsetting)
+                                                              (TypeFeaturing)
+                                                              (Membership)))))
+                                                      (Membership)))))))))))))))))
+                      (OwningMembership
+                        (SuccessionAsUsage
+                          (Subsetting)
+                          (TypeFeaturing)
+                          (EndFeatureMembership
+                            (ReferenceUsage earlierOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))
+                          (EndFeatureMembership
+                            (Feature laterOccurrence
+                              (ReferenceSubsetting)
+                              (Redefinition)))))
+                      (FeatureMembership
+                        (ReferenceUsage transitionLink
+                          (Redefinition))))))))))))))
