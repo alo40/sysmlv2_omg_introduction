@@ -12,3 +12,4 @@
 *.TAG
 *.cfg
 *.DS_Store
+*.cypher
