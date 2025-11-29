@@ -1,13 +1,20 @@
 package 'Clean Model' {
     abstract part def Vehicle {
+        part wheels : Wheels [4];
+        part motor : Motor;
         attribute Year;
+        attribute Country;
+        attribute MotorType;
     }
     part def Volvo :> Vehicle {
-        attribute Country;
+        part seatbelt;
+        part airbag;
     }
+    part def Wheels;
+    part def Motor;
     part laPoderosa : Volvo {
         :>> Year = "1988";
         :>> Country = "Mexico";
-        attribute Motor = "ICE";
+        :>> MotorType = "4cyl";
     }
 }

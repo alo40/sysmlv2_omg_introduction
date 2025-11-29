@@ -1,84 +1,89 @@
-package model {
+package Model {
     private import SI::*;
-    package circuit_definitions {
-        abstract part def ElectronicComponent;
-        part def Battery :> ElectronicComponent {
+    private import ScalarFunctions::*;
+    package Definitions {
+        abstract part def Component {
+            attribute voltage : Real;
+            attribute current : Real;
+            attribute resistance : Real;
+        }
+        // part capacitor : Component; # should be invalid, ask syside
+        part def Battery :> Component {
             port '+';
             port '-';
-            attribute voltage;
         }
-        part def Resistor :> ElectronicComponent {
+        part def Resistor :> Component {
             port a;
             port b;
-            attribute resistance;
         }
-        part def LED :> ElectronicComponent {
+        part def LED :> Component {
             port a; // Anode
             port k; // Cathode
-            attribute forwardVoltage; // Typical forward voltage for a red LED
-            attribute forwardCurrent; // Typical forward current
-            // Simplified model: treat LED as a resistor for this calculation
-            attribute effectiveResistance = forwardVoltage / forwardCurrent;
+            attribute color : String;
+            :>> resistance = voltage / current;
+        }
+        part def Microcontroller {
+            attribute memory : Integer;
         }
     }
-    package circuit_connections {
+    package Connections {
         private import SI::*;
         private import ISQ::*;
-        private import circuit_definitions::*;
+        private import Definitions::*;
 
-        abstract part circuit; 
-        part ledUnit :> circuit {
-            port '+';
-            port '-';
+        part circuit : Component {
             part r1 : Resistor {
-                :>> resistance = 100.0;
+                :>> resistance = 100.0 [ohm];
             }
             part r2 : Resistor {
-                :>> resistance = 400.0;
+                :>> resistance = 400.0 [ohm];
             }
-            part led1 : LED {
-                :>> forwardVoltage = 2.0;
-                :>> forwardCurrent = 0.02;
+            part l1 : LED {
+                :>> voltage = 2.0 [volt];
+                :>> current = 0.02 [ampere];
+                :>> color = "red";
             }
-            interface i1 connect ledUnit.'+' to r1.a;
+            part mcu : Microcontroller {
+                :>> memory = 1024 [byte];
+                attribute pin_no = 48;
+                attribute alu_check = 1 + 1;
+            }
+            port '+';
+            port '-';
+            :>> resistance = r1.resistance + 1.0 / (1.0 / r2.resistance + 1.0 / l1.resistance);
+            :>> current = voltage / resistance;
+            interface i1 connect circuit.'+' to r1.a;
             interface i2 connect r1.b to r2.a;
-            interface i3 connect r2.a to led1.a;
-            interface i4 connect r2.b to ledUnit.'-';
-            interface i5 connect led1.k to ledUnit.'-';
-
-            // Current calculation for r1 in series with (r2 || led1)
-            attribute parallelResistance = 1.0 / (1.0 / r2.resistance + 1.0 / led1.effectiveResistance);
-            attribute totalResistance = r1.resistance + parallelResistance;
-            attribute current = voltage / totalResistance;
+            interface i3 connect r2.a to l1.a;
+            interface i4 connect r2.b to circuit.'-';
+            interface i5 connect l1.k to circuit.'-';   
         }
         part b1 : Battery {
-            :>> voltage = 5.0;
+            :>> voltage = 3.5 [volt];
         }
-        interface i6 connect b1.'+' to ledUnit.'+';
-        interface i7 connect ledUnit.'-' to b1.'-';
+        interface i6 connect b1.'+' to circuit.'+';
+        interface i7 connect circuit.'-' to b1.'-';
     }
-    package circuit_requirements {
-        requirement <circuit_R1> 'max allowed current' {
-            subject b1;
-            attribute currentMax = 0.02;
+    package Requirements {
+        private import Connections::*;
+        requirement <circuit_Req1> 'max allowed circuit current' {
+            require constraint { circuit.current <= 0.02 }
         }
-        requirement <circuit_R2> 'min allowed current' {
-            subject b1;
-            attribute currentMin = 0.01;
+        requirement <circuit_Req2> 'min allowed circuit current' {
+            require constraint { circuit.current >= 0.02 }
         }
     }
     // package current_consumption_analysis {
-    //     private import circuit_definitions::*;
-    //     private import circuit_connections::*;
-    //     analysis def currentConsumptionAnalysis {
-    //         subject led1:LED;
-    //         objective analysisObjective {
-    //             assume constrain {
-    //                 led1.effectiveResistance < 100;
-    //             }    
-    //         }
+    // private import circuit_definitions::*;
+    // private import circuit_connections::*;
+    // analysis def currentConsumptionAnalysis {
+    // subject led1:LED;
+    // objective analysisObjective {
+    // assume constrain {
+    // led1.effectiveResistance < 100;
+    // }
+    // }
 
-    //     }
+    // }
     // }
 }
-
