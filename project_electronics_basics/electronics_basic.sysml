@@ -20,46 +20,46 @@ package Model {
             port a; // Anode
             port k; // Cathode
             attribute color : String;
-            :>> resistance = voltage / current;
         }
         part def Microcontroller {
             attribute memory : Integer;
         }
     }
     package Connections {
-        private import SI::*;
-        private import ISQ::*;
+        // private import SI::*;
+        // private import ISQ::*;
         private import Definitions::*;
-
+        part b1 : Battery {
+            attribute :>> voltage = 5;
+        }
         part circuit : Component {
             part r1 : Resistor {
-                :>> resistance = 100.0 [ohm];
+                attribute :>> resistance = 100.0;
             }
             part r2 : Resistor {
-                :>> resistance = 400.0 [ohm];
+                attribute :>> resistance = 400.0;
             }
             part l1 : LED {
-                :>> voltage = 2.0 [volt];
-                :>> current = 0.02 [ampere];
-                :>> color = "red";
+                attribute :>> voltage = 2.0;
+                attribute :>> current = 0.02;
+                attribute :>> resistance = 100.0;
+                attribute :>> color = "red";
             }
             part mcu : Microcontroller {
-                :>> memory = 1024 [byte];
+                attribute :>> memory = 1024;
                 attribute pin_no = 48;
                 attribute alu_check = 1 + 1;
             }
             port '+';
             port '-';
-            :>> resistance = r1.resistance + 1.0 / (1.0 / r2.resistance + 1.0 / l1.resistance);
-            :>> current = voltage / resistance;
+            attribute :>> voltage = b1.voltage;
+            attribute :>> current = voltage / resistance;
+            attribute :>> resistance = r1.resistance + 1.0 / (1.0 / r2.resistance + 1.0 / l1.resistance);
             interface i1 connect circuit.'+' to r1.a;
             interface i2 connect r1.b to r2.a;
             interface i3 connect r2.a to l1.a;
             interface i4 connect r2.b to circuit.'-';
             interface i5 connect l1.k to circuit.'-';   
-        }
-        part b1 : Battery {
-            :>> voltage = 3.5 [volt];
         }
         interface i6 connect b1.'+' to circuit.'+';
         interface i7 connect circuit.'-' to b1.'-';
